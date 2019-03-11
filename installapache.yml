@@ -1,6 +1,5 @@
 ---
 - hosts: node01  # Host or Group of Selections
-  become: true
   vars:
     httpd_port: 80
   tasks:
