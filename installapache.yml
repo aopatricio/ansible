@@ -1,7 +1,5 @@
 ---
 - hosts: node01  # Host or Group of Selections
-  become: yes
-  become_user: root
   vars:
     httpd_port: 80
   tasks:
