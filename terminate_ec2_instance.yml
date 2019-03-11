@@ -6,7 +6,6 @@
     - name: Terminate instance
       ec2:
          instance_ids: "{{ id_instace }}"
-           - i-0e6ecafd492c3c442
          wait: true
          state: absent
          region: us-east-1
