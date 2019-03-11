@@ -9,7 +9,7 @@
          group: default 
          instance_type: t2.micro
          instance_tags:
-           Name: Apache-Ansible
+           Name: Apache install by Ansible
          image: ami-00f4d71ff04fa5bcc
          wait: true
          region: us-east-1
