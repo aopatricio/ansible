@@ -1,0 +1,23 @@
+---
+- name: Create an EC2 instance
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - name: Launch instance
+      ec2:
+         key_name: id_rsa
+         group: default 
+         instance_type: t2.micro
+         instance_tags:
+           Name: Apache-Ansible
+         image: ami-00f4d71ff04fa5bcc
+         wait: true
+         region: us-east-1
+         aws_access_key: AKIAJTFI3KF3FF7QOENA
+         aws_secret_key: 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
+        
+      register: ec2
+    - name: Print all ec2 variables
+      debug: var=ec2
+    - name: Get theh Ip address
+      debug: var=ec2.instances[0].public_dns_name

@@ -1,0 +1,20 @@
+---
+- name: Terminate an EC2 instance
+  hosts: localhost
+  gather_facts: True
+  tasks:
+    - name: Terminate instance
+      ec2:
+         instance_ids:
+           - i-0e6ecafd492c3c442
+         wait: true
+         state: absent
+         region: us-east-1
+         aws_access_key: AKIAJTFI3KF3FF7QOENA
+         aws_secret_key: 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
+
+      register: ec2
+    - name: Print all ec2 variables
+      debug: var=ec2
+
+
